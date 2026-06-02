@@ -1,0 +1,8 @@
+jax[cpu]>=0.6.0
+numpy>=1.26.4
+scipy>=1.12.0
+attrs
+optax
+filelock
+nbconvert
+mpax>=0.2.4

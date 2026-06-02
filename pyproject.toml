@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qihd"
+version = "0.4.0"
+description = "QiHD: Quantum-Inspired Hamiltonian Descent for MIQP"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "PhysOpt contributors" }
+]
+dependencies = [
+  "attrs",
+  "filelock",
+  "jax[cpu]>=0.6.0",
+  "mpax>=0.2.4",
+  "nbconvert",
+  "numpy>=1.26.4",
+  "optax",
+  "scipy>=1.12.0",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "Natural Language :: English",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.optional-dependencies]
+cuda12 = [
+  "jax[cuda12]>=0.6.0",
+]
+dev = [
+  "pytest",
+  "tox",
+]
+
+[project.urls]
+Homepage = "https://github.com/PhysOpt/QiHD"
+Repository = "https://github.com/PhysOpt/QiHD"
+Issues = "https://github.com/PhysOpt/QiHD/issues"
+
+[tool.setuptools.packages.find]
+include = ["qihd*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
